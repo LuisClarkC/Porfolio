@@ -1,0 +1,773 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Student Portfolio</title> | Website Portfolio &amp; UI/UX Designer Portfolio</title>
+<!-- Google Fonts: Bebas Neue for retro editorial titles, Inter for sharp readable copy -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@300;400;500;600;700;800&amp;family=Playfair+Display:ital,wght@1,500&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sand: {
+              50: '#FAF6EE',
+              100: '#F4EBD9',
+              200: '#EAD7BA',
+              300: '#DECA9D',
+            },
+            slateCustom: {
+              light: '#5D7E9E',
+              DEFAULT: '#466685',
+              dark: '#304C68',
+              deep: '#1E3347',
+            },
+            butter: {
+              light: '#FFF5CA',
+              DEFAULT: '#F5E48E',
+              dark: '#DEC761',
+            }
+          },
+          fontFamily: {
+            display: ['"Bebas Neue"', 'sans-serif'],
+            sans: ['"Inter"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+          },
+          letterSpacing: {
+            ultra: '0.18em',
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles for Editorial Framing & Visuals -->
+<style data-purpose="custom-typography">
+    .font-condensed {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 0.04em;
+      line-height: 0.95;
+    }
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      border-radius: 9999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.75rem;
+    }
+  </style>
+<style data-purpose="card-borders">
+    .vintage-card {
+      border: 1px solid rgba(48, 76, 104, 0.25);
+      position: relative;
+    }
+    .vintage-card-dark {
+      border: 1px solid rgba(244, 235, 217, 0.25);
+    }
+    .grid-lines {
+      background-size: 24px 24px;
+      background-image: 
+        linear-gradient(to right, rgba(70, 102, 133, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(70, 102, 133, 0.05) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="bg-sand-100 text-slateCustom-deep font-sans antialiased selection:bg-butter selection:text-slateCustom-deep min-h-screen">
+<!-- BEGIN: SiteNavigation -->
+<header class="sticky top-0 z-50 bg-sand-100/95 backdrop-blur-md border-b border-slateCustom/20 transition-all duration-200">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16 sm:h-20">
+<!-- Logo / Monogram -->
+<a aria-label="Riley Stone Portfolio Home" class="group flex items-center gap-2 focus:outline-none" href="#home">
+<span class="w-8 h-8 rounded-full bg-slateCustom text-sand-100 font-display flex items-center justify-center text-lg tracking-wider group-hover:bg-slateCustom-dark transition-colors">R</span>
+<span class="font-condensed text-xl sm:text-2xl tracking-wider text-slateCustom-deep group-hover:text-slateCustom">
+            LUIS CLARK CADUNGOG <span class="text-slateCustom/60 font-light text-base">/ STUDENT PORTFOLIO</span>
+</span>
+</a>
+<!-- Desktop Navigation Links -->
+<nav aria-label="Main Navigation" class="hidden md:flex items-center space-x-6 lg:space-x-8">
+<a class="text-xs font-semibold tracking-wider uppercase text-slateCustom-deep hover:text-slateCustom transition-colors" href="#about">About</a>
+<a class="text-xs font-semibold tracking-wider uppercase text-slateCustom-deep hover:text-slateCustom transition-colors" href="#skills">Skills &amp; Niches</a>
+<a class="text-xs font-semibold tracking-wider uppercase text-slateCustom-deep hover:text-slateCustom transition-colors" href="#projects">Case Studies</a>
+
+
+</nav>
+<!-- Right Side CTA Actions -->
+<div class="hidden sm:flex items-center space-x-3">
+<a aria-label="Riley Stone GitHub" class="p-2 text-slateCustom-deep hover:text-slateCustom transition-colors" href="https://github.com" rel="noopener noreferrer" target="_blank" title="GitHub Profile">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"></path></svg>
+</a>
+<a class="inline-flex items-center justify-center px-4 py-2 border-2 border-slateCustom text-xs font-bold tracking-wider uppercase text-sand-100 bg-slateCustom hover:bg-slateCustom-dark rounded-full transition-colors shadow-sm" href="#contact">
+            Contact Me
+          </a>
+</div>
+<!-- Mobile Menu Toggle Button -->
+<button aria-expanded="false" aria-label="Toggle Navigation Menu" class="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-slateCustom-deep hover:bg-sand-200 focus:outline-none" id="mobile-menu-toggle" type="button">
+<svg class="w-6 h-6" fill="none" id="menu-icon-bars" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<svg class="hidden w-6 h-6" fill="none" id="menu-icon-close" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Mobile Drawer Menu -->
+<nav aria-label="Mobile Navigation Drawer" class="hidden md:hidden border-t border-slateCustom/20 bg-sand-50 px-4 pt-3 pb-6 space-y-3" id="mobile-menu">
+<a class="block py-2 text-sm font-semibold tracking-wider uppercase text-slateCustom-deep hover:text-slateCustom" href="#about">About</a>
+<a class="block py-2 text-sm font-semibold tracking-wider uppercase text-slateCustom-deep hover:text-slateCustom" href="#skills">Skills &amp; Niches</a>
+<a class="block py-2 text-sm font-semibold tracking-wider uppercase text-slateCustom-deep hover:text-slateCustom" href="#projects">Case Studies</a>
+
+
+<div class="pt-4 border-t border-slateCustom/15 flex flex-col gap-2">
+<a class="w-full text-center py-2.5 bg-slateCustom text-sand-100 font-bold uppercase text-xs tracking-wider rounded-full" href="#contact">Contact Me</a>
+<a class="w-full text-center py-2 border border-slateCustom/30 text-slateCustom text-xs font-semibold rounded-full uppercase tracking-wider" href="https://github.com" rel="noopener noreferrer" target="_blank">GitHub Profile</a>
+</div>
+</nav>
+</header>
+<!-- END: SiteNavigation -->
+<main>
+<!-- BEGIN: HeroSection -->
+<section class="relative overflow-hidden pt-8 pb-16 md:pt-14 md:pb-24 grid-lines" id="home">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Top Category Pill & Micro Bar -->
+<div class="flex flex-wrap items-center justify-between gap-3 mb-6 pb-3 border-b border-slateCustom/20">
+<div class="flex items-center gap-2">
+<span class="badge-pill bg-butter text-slateCustom-deep border border-slateCustom/30">Information Technology • 4th Year</span>
+<span class="text-xs uppercase tracking-wider text-slateCustom/80 hidden sm:inline-block">Specializing in Responsive UI</span>
+</div>
+<div class="flex items-center space-x-2 text-xs font-mono text-slateCustom-deep/70">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="">AVAILABLE FOR 2nd Semester 2026 INTERNSHIP</span>
+</div>
+</div>
+<!-- Poster Grid Layout (matching reference split hero) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<!-- Left Column: Big Editorial Typography & Introductions -->
+<div class="lg:col-span-7 flex flex-col justify-center">
+<span class="text-slateCustom font-bold text-xs sm:text-sm tracking-ultra uppercase mb-1">
+              STUDENT DESIGNER • UI/UX CRAFTSPERSON
+            </span>
+<h1 class="font-condensed text-6xl sm:text-8xl md:text-9xl text-slateCustom tracking-tight leading-none uppercase select-none">
+              PORTFOLIO
+            </h1>
+<div class="w-24 h-1.5 bg-butter mb-6 mt-1"></div>
+<p class="text-base sm:text-xl text-slateCustom-deep/90 max-w-xl font-normal leading-relaxed mb-6">
+              Hi, I'm <strong class="font-semibold text-slateCustom-dark">Clark</strong> — a senior studying Information Technology. I build fast, accessible web applications with clean typography, modular code, and intentional micro-interactions.
+            </p>
+<!-- Pill Badges Row -->
+<div class="flex flex-wrap gap-2 mb-8" data-purpose="quick-skills">
+<span class="badge-pill bg-sand-50 text-slateCustom-deep border border-slateCustom/25">JavaScript (ES6+)</span>
+<span class="badge-pill bg-sand-50 text-slateCustom-deep border border-slateCustom/25">Figma UI/UX</span>
+</div>
+<!-- Action Buttons Row -->
+<div class="flex flex-wrap items-center gap-4">
+<a class="px-6 py-3.5 bg-slateCustom hover:bg-slateCustom-dark text-sand-100 font-bold text-xs uppercase tracking-wider rounded-full shadow transition-all hover:translate-y-[-1px]" href="#projects">
+                Explore Case Studies ↓
+              </a>
+<a class="px-6 py-3.5 border-2 border-slateCustom/60 hover:border-slateCustom text-slateCustom-deep font-bold text-xs uppercase tracking-wider rounded-full hover:bg-sand-200 transition-all" href="files/LuisClark_Cadungog_Resume.pdf" target="_blank" rel="noopener noreferrer">
+                Download Resume (PDF)
+              </a>
+</div>
+<!-- Stats Bar Banner (Vintage aesthetic from reference) -->
+<div class="mt-10 pt-6 border-t border-slateCustom/25 grid grid-cols-3 gap-4 max-w-lg">
+<div>
+<span class="font-condensed text-3xl sm:text-4xl text-slateCustom block">3+</span>
+<span class="text-[11px] uppercase tracking-wider text-slateCustom-deep/75 font-semibold">Years of Code</span>
+</div>
+<div>
+</div>
+</div>
+</div>
+<!-- Right Column: Stylized Portrait & Poster Card inspired by reference layout -->
+<div class="lg:col-span-5">
+<div class="vintage-card bg-sand-50 rounded-2xl p-4 sm:p-6 shadow-md relative overflow-hidden">
+<!-- Subtle decorative stamp -->
+<div class="absolute -right-6 -bottom-6 w-28 h-28 rounded-full border-2 border-dashed border-slateCustom/30 flex items-center justify-center pointer-events-none rotate-12">
+<span class="text-[9px] font-bold uppercase tracking-widest text-slateCustom/40 text-center">Verified•Student•2025</span>
+</div>
+<!-- Portrait Frame with aesthetic border -->
+<div class="relative rounded-xl overflow-hidden border-2 border-slateCustom/30 bg-slateCustom/10 aspect-[4/5] flex items-center justify-center group">
+<img alt="Riley Stone - Student Developer and Designer portrait styling" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="files/Profile.jpg">
+<div class="absolute inset-0 bg-gradient-to-t from-slateCustom-deep/80 via-transparent to-transparent"></div>
+<!-- Bottom banner overlay inside photo -->
+<div class="absolute bottom-4 left-4 right-4 text-sand-100">
+<span class="text-xs uppercase tracking-widest text-butter font-semibold block mb-0.5">STUDENT SHOWCASE</span>
+<p class="font-serif italic text-sm text-sand-50">"Creating useful things."</p>
+</div>
+</div>
+<!-- Quick bio card footer inside vintage frame -->
+<div class="mt-4 pt-3 flex items-center justify-between text-xs text-slateCustom-deep font-medium border-t border-slateCustom/20">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-butter-dark"></span>
+                  B.S. in Information Technology
+                </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: AboutAndBioSection -->
+<section class="py-16 md:py-20 bg-slateCustom text-sand-100" id="about">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+<!-- Left: Big typography & summary statement -->
+<div class="lg:col-span-5">
+<span class="text-butter text-xs font-bold tracking-ultra uppercase block mb-2">BACKGROUND &amp; PHILOSOPHY</span>
+<h2 class="font-condensed text-5xl sm:text-7xl tracking-wide uppercase leading-none text-sand-50 mb-6">
+              HI, I'M CLARK
+            </h2>
+<div class="space-y-4 text-sand-100/90 text-sm sm:text-base leading-relaxed text-justify">
+<p class="">
+                I am an undergraduate student at CEC, majoring in Information Technology. My goal is simple: to bridge the gap between difficult navigation and an easy, accessible user experience.
+              </p>
+<p class="">
+                I am passionate about creating digital experiences that are not only visually appealing but also inclusive and user-friendly. My approach combines technical proficiency with a strong eye for design, ensuring that every project I work on meets high standards of quality, accessibility, and usability.
+              </p>
+</div>
+<!-- Mini credentials box -->
+<div class="mt-8 p-4 rounded-xl vintage-card-dark bg-slateCustom-dark/40 flex flex-col gap-2">
+<div class="flex justify-between items-center text-xs">
+<span class="text-sand-200 uppercase tracking-wider font-semibold">University:</span>
+<span class="font-medium text-sand-50">Cebu Eastern College</span>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-sand-200 uppercase tracking-wider font-semibold">Expected Graduation:</span>
+<span class="font-medium text-sand-50">March 2027</span>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-sand-200 uppercase tracking-wider font-semibold">Current Focus:</span>
+<span class="font-medium text-butter">Accessible Design &amp; Software Development</span>
+</div>
+</div>
+</div>
+<!-- Right: Visual Niche Cards (Matching the reference aesthetic) -->
+<div class="lg:col-span-7">
+<div class="bg-sand-100 text-slateCustom-deep rounded-2xl p-6 sm:p-8 vintage-card shadow-lg">
+<div class="flex items-center justify-between mb-6 pb-3 border-b border-slateCustom/20">
+<h3 class="font-condensed text-3xl sm:text-4xl uppercase text-slateCustom tracking-wide">
+                  AREAS OF SPECIALIZATION
+                </h3>
+<span class="badge-pill bg-slateCustom text-sand-100">Core Disciplines</span>
+</div>
+<!-- Specialization Rows with pill styling -->
+<div class="space-y-3">
+<!-- Discipline 1 -->
+<div class="p-4 rounded-xl border border-slateCustom/20 bg-sand-50 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:border-slateCustom transition-colors">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-slateCustom/15 flex items-center justify-center font-bold text-xs text-slateCustom">01</span>
+<div>
+<h4 class="font-bold text-sm tracking-wide uppercase text-slateCustom-deep">Front-End Engineering</h4>
+<p class="text-xs text-slateCustom-deep/70">Responsive layouts, semantic HTML, modern CSS architecture, vanilla JS &amp; React basics.</p>
+</div>
+</div>
+<span class="self-start sm:self-center badge-pill bg-butter/60 text-slateCustom-deep font-mono text-[10px]">Primary</span>
+</div>
+<!-- Discipline 2 -->
+<div class="p-4 rounded-xl border border-slateCustom/20 bg-sand-50 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:border-slateCustom transition-colors">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-slateCustom/15 flex items-center justify-center font-bold text-xs text-slateCustom">02</span>
+<div>
+<h4 class="font-bold text-sm tracking-wide uppercase text-slateCustom-deep">UI/UX &amp; Prototyping</h4>
+<p class="text-xs text-slateCustom-deep/70">Wireframing, high-fidelity interactive Figma mockups, user flow diagramming.</p>
+</div>
+</div>
+<span class="self-start sm:self-center badge-pill bg-sand-200 text-slateCustom-deep font-mono text-[10px]">Proficient</span>
+</div>
+<!-- Discipline 3 -->
+<div class="p-4 rounded-xl border border-slateCustom/20 bg-sand-50 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:border-slateCustom transition-colors">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-slateCustom/15 flex items-center justify-center font-bold text-xs text-slateCustom">03</span>
+<div>
+<h4 class="font-bold text-sm tracking-wide uppercase text-slateCustom-deep">Figma</h4>
+<p class="text-xs text-slateCustom-deep/70">Interface design, high-fidelity mockups, prototyping, design systems, and collaborative UI iteration.</p>
+</div>
+</div>
+<span class="self-start sm:self-center badge-pill bg-sand-200 text-slateCustom-deep font-mono text-[10px]">Primary</span>
+</div>
+<!-- Discipline 4 -->
+<div class="p-4 rounded-xl border border-slateCustom/20 bg-sand-50 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:border-slateCustom transition-colors">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-slateCustom/15 flex items-center justify-center font-bold text-xs text-slateCustom">04</span>
+<div>
+<h4 class="font-bold text-sm tracking-wide uppercase text-slateCustom-deep">Roblox Studio</h4>
+<p class="text-xs text-slateCustom-deep/70">Game UI design, immersive interface building, interactive experience prototyping, and user flow testing.</p>
+</div>
+</div>
+<span class="self-start sm:self-center badge-pill bg-sand-200 text-slateCustom-deep font-mono text-[10px]">Growing</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: AboutAndBioSection -->
+<!-- BEGIN: SkillsSection -->
+<section class="py-16 md:py-24 bg-sand-100 border-b border-slateCustom/20" id="skills">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+<div>
+<span class="text-xs font-bold tracking-ultra text-slateCustom uppercase block mb-1">TECHNICAL TOOLBOX</span>
+<h2 class="font-condensed text-5xl sm:text-6xl uppercase text-slateCustom-deep tracking-tight">
+              SKILLS &amp; TECHNOLOGIES
+            </h2>
+</div>
+<p class="text-sm text-slateCustom-deep/70 max-w-md mt-2 md:mt-0">
+            A comprehensive overview of programming languages, libraries, design suites, and developer practices I use daily.
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Category 1: Frontend Development -->
+<div class="vintage-card bg-sand-50 rounded-xl p-5 hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-4 border-b border-slateCustom/20 pb-2">
+<span class="font-condensed text-2xl uppercase tracking-wider text-slateCustom">Front-End</span>
+<span class="text-xs font-mono text-slateCustom/70">LANGUAGES</span>
+</div>
+<ul class="space-y-2 text-xs font-medium text-slateCustom-deep">
+<li class="flex items-center justify-between">
+<span class="">Semantic HTML5</span>
+<span class="text-emerald-700 font-semibold">Advanced</span>
+</li>
+<li class="flex items-center justify-between">
+<span class="">Modern CSS3 / Flexbox / Grid</span>
+<span class="text-emerald-700 font-semibold">Advanced</span>
+</li>
+<li class="flex items-center justify-between">
+<span class="">Tailwind CSS</span>
+<span class="text-emerald-700 font-semibold">Proficient</span>
+</li>
+<li class="flex items-center justify-between">
+<span class="">JavaScript (ES6+)</span>
+<span class="text-slateCustom font-semibold">Intermediate</span>
+</li>
+<li class="flex items-center justify-between">
+<span class="">React &amp; JSX Fundamentals</span>
+<span class="text-amber-800 font-semibold">Learning</span>
+</li>
+</ul>
+</div>
+<!-- Category 2: UI & Design -->
+<div class="vintage-card bg-sand-50 rounded-xl p-5 hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-4 border-b border-slateCustom/20 pb-2">
+<span class="font-condensed text-2xl uppercase tracking-wider text-slateCustom">Design &amp; UX</span>
+<span class="text-xs font-mono text-slateCustom/70">CREATIVE</span>
+</div>
+<ul class="space-y-2 text-xs font-medium text-slateCustom-deep">
+<li class="flex items-center justify-between">
+<span class="">Figma UI / Components</span>
+<span class="text-emerald-700 font-semibold">Proficient</span>
+</li>
+<li class="flex items-center justify-between">
+<span class="">Wireframing &amp; Flowcharts</span>
+<span class="text-emerald-700 font-semibold">Proficient</span>
+</li>
+<li class="flex items-center justify-between">
+<span class="">Design System Tokens</span>
+<span class="text-slateCustom font-semibold">Intermediate</span>
+</li>
+<li class="flex items-center justify-between">
+<span class="">Usability Testing</span>
+<span class="text-slateCustom font-semibold">Academic</span>
+</li>
+<li class="flex items-center justify-between">
+<span class="">Responsive Mobile-First UX</span>
+<span class="text-emerald-700 font-semibold">Advanced</span>
+</li>
+</ul>
+</div>
+<!-- Category 3: Figma Workflow -->
+<div class="vintage-card bg-sand-50 rounded-xl p-5 hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between mb-4 border-b border-slateCustom/20 pb-2">
+<span class="font-condensed text-2xl uppercase tracking-wider text-slateCustom">Figma / Roblox</span>
+<span class="text-xs font-mono text-slateCustom/70">DESIGN TOOLS</span>
+</div>
+<ul class="space-y-2 text-xs font-medium text-slateCustom-deep">
+<li class="flex items-center justify-between">
+<span class="">High-Fidelity Mockups</span>
+<span class="text-emerald-700 font-semibold">Proficient</span>
+</li>
+<li class="flex items-center justify-between">
+<span class="">Interactive Prototyping</span>
+<span class="text-emerald-700 font-semibold">Proficient</span>
+</li>
+<li class="flex items-center justify-between">
+<span class="">Roblox Studio UI Design</span>
+<span class="text-slateCustom font-semibold">Growing</span>
+</li>
+<li class="flex items-center justify-between">
+<span class="">Component Libraries</span>
+<span class="text-emerald-700 font-semibold">Strong</span>
+</li>
+<li class="flex items-center justify-between">
+<span class="">Collaboration &amp; Review</span>
+<span class="text-slateCustom font-semibold">Active</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- END: SkillsSection -->
+<!-- BEGIN: ProjectsSection -->
+<section class="py-16 md:py-24 bg-sand-50" id="projects">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Header -->
+<div class="text-center max-w-3xl mx-auto mb-10">
+<span class="text-xs font-bold tracking-ultra text-slateCustom uppercase block mb-1">SELECTED CASE STUDIES</span>
+<h2 class="font-condensed text-5xl sm:text-7xl uppercase text-slateCustom-deep tracking-tight">
+            REAL RESULTS • STUDENT PROJECTS
+          </h2>
+<p class="text-sm sm:text-base text-slateCustom-deep/80 mt-3 font-normal">
+            A breakdown of class assignments, independent explorations, and design system projects built with genuine care for performance and visual rhythm.
+          </p>
+</div>
+<!-- Filter Pill Tabs -->
+<div class="flex flex-wrap items-center justify-center gap-2 mb-12" id="project-filter-container">
+<button class="project-filter-btn active-filter px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-slateCustom text-sand-100 transition-colors" data-filter="all" type="button">All Projects</button>
+<button class="project-filter-btn px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-sand-200 text-slateCustom-deep hover:bg-slateCustom hover:text-sand-100 transition-colors" data-filter="academic" type="button">Academic / Classwork</button>
+<button class="project-filter-btn px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-sand-200 text-slateCustom-deep hover:bg-slateCustom hover:text-sand-100 transition-colors" data-filter="personal" type="button">Personal Experiments</button>
+<button class="project-filter-btn px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-sand-200 text-slateCustom-deep hover:bg-slateCustom hover:text-sand-100 transition-colors" data-filter="uiux" type="button">UI/UX Design Systems</button>
+</div>
+<!-- Projects Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- PROJECT 1: Roblox Academic Game -->
+<article class="project-card vintage-card bg-sand-100 rounded-2xl overflow-hidden flex flex-col justify-between" data-category="academic">
+<div>
+<!-- Visual Card Header inspired by reference case study cards -->
+<div class="p-4 bg-slateCustom text-sand-100 flex items-center justify-between border-b border-slateCustom-dark">
+<div>
+<span class="text-[10px] uppercase font-bold tracking-widest text-butter block">ACADEMIC / CLASSWORK • ROBLOX GAME</span>
+<h3 class="font-condensed text-2xl uppercase tracking-wide">PATINTERO</h3>
+</div>
+<span class="w-8 h-8 rounded-full border border-sand-100/40 flex items-center justify-center font-mono text-xs text-sand-100">01</span>
+</div>
+<!-- Mockup Graphic Area -->
+<div class="p-6 bg-sand-50 border-b border-slateCustom/15 flex flex-col items-center justify-center text-center">
+<div class="w-full h-44 rounded-lg bg-slateCustom/10 border border-slateCustom/20 flex flex-col items-center justify-center p-4 relative overflow-hidden">
+<div class="absolute top-2 left-2 flex space-x-1">
+<span class="w-2 h-2 rounded-full bg-rose-400"></span>
+<span class="w-2 h-2 rounded-full bg-amber-400"></span>
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+</div>
+<img alt="PATINTERO Roblox game preview" class="mx-auto max-w-full max-h-full object-contain rounded-md" src="files/ROBLOX.png">
+</div>
+</div>
+<!-- Details Body -->
+<div class="p-6 space-y-4">
+<div>
+<h4 class="text-xs uppercase font-bold tracking-wider text-slateCustom mb-1">Problem &amp; Goal:</h4>
+<p class="text-xs text-slateCustom-deep/80 leading-relaxed">
+                    Created a multiplayer-inspired classroom project using Roblox Studio, focusing on an engaging gameplay loop, accessible UI, and a stylized 3D environment that felt polished and playable.
+                  </p>
+</div>
+<div>
+<h4 class="text-xs uppercase font-bold tracking-wider text-slateCustom mb-1">Key Outcome:</h4>
+<div class="grid grid-cols-2 gap-2 text-center pt-1">
+<div class="bg-sand-50 p-2 rounded border border-slateCustom/15">
+<span class="font-condensed text-2xl text-slateCustom block">3D</span>
+<span class="text-[10px] uppercase text-slateCustom-deep/70">Environment Build</span>
+</div>
+<div class="bg-sand-50 p-2 rounded border border-slateCustom/15">
+<span class="font-condensed text-2xl text-slateCustom block">Game</span>
+<span class="text-[10px] uppercase text-slateCustom-deep/70">Prototype Loop</span>
+</div>
+</div>
+</div>
+<!-- Deliverable Tags -->
+<div class="pt-2">
+<span class="text-[10px] font-mono uppercase tracking-wider text-slateCustom/80 block mb-1.5">Technologies Used:</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="badge-pill bg-sand-50 border border-slateCustom/20 text-slateCustom-deep text-[10px]">Roblox Studio</span>
+<span class="badge-pill bg-sand-50 border border-slateCustom/20 text-slateCustom-deep text-[10px]">Blender</span>
+<span class="badge-pill bg-sand-50 border border-slateCustom/20 text-slateCustom-deep text-[10px]">Lua</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card Action Footer -->
+<div class="p-4 bg-sand-50 border-t border-slateCustom/20 flex items-center justify-between">
+<a class="text-xs font-bold text-slateCustom hover:underline uppercase tracking-wider flex items-center gap-1" href="https://www.roblox.com/games/84220318901609/PATINTERO" rel="noopener noreferrer" target="_blank">
+                Play Game →
+              </a>
+<span class="badge-pill bg-butter text-slateCustom-deep">Classwork</span>
+</div>
+</article>
+<!-- PROJECT 2: Figma School Research Activity -->
+<article class="project-card vintage-card bg-sand-100 rounded-2xl overflow-hidden flex flex-col justify-between" data-category="uiux">
+<div>
+<!-- Visual Card Header -->
+<div class="p-4 bg-slateCustom text-sand-100 flex items-center justify-between border-b border-slateCustom-dark">
+<div>
+<span class="text-[10px] uppercase font-bold tracking-widest text-butter block">CLASS ACTIVITY • FIGMA RESEARCH</span>
+<h3 class="font-condensed text-2xl uppercase tracking-wide">School Landmark &amp; Offerings Study</h3>
+</div>
+<span class="w-8 h-8 rounded-full border border-sand-100/40 flex items-center justify-center font-mono text-xs text-sand-100">02</span>
+</div>
+<!-- Mockup Graphic Area -->
+<div class="p-6 bg-sand-50 border-b border-slateCustom/15 flex flex-col items-center justify-center text-center">
+<div class="w-full h-44 rounded-lg bg-slateCustom/10 border border-slateCustom/20 flex items-center justify-center p-4 relative overflow-hidden">
+<div class="absolute top-2 left-2 flex space-x-1">
+<span class="w-2 h-2 rounded-full bg-rose-400"></span>
+<span class="w-2 h-2 rounded-full bg-amber-400"></span>
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+</div>
+<img alt="School landmark and offerings research activity" class="mx-auto max-w-full max-h-full object-contain rounded-md" src="files/Activity.png">
+</div>
+</div>
+<!-- Details Body -->
+<div class="p-6 space-y-4">
+<div>
+<h4 class="text-xs uppercase font-bold tracking-wider text-slateCustom mb-1">Problem &amp; Goal:</h4>
+<p class="text-xs text-slateCustom-deep/80 leading-relaxed">
+                    Research and visually present a school’s landmarks, facilities, academic offerings, and community highlights in a clear and engaging information design format.
+                  </p>
+</div>
+<div>
+<h4 class="text-xs uppercase font-bold tracking-wider text-slateCustom mb-1">Key Outcome:</h4>
+<div class="grid grid-cols-2 gap-2 text-center pt-1">
+<div class="bg-sand-50 p-2 rounded border border-slateCustom/15">
+<span class="font-condensed text-2xl text-slateCustom block">1.4x</span>
+<span class="text-[10px] uppercase text-slateCustom-deep/70">Better Clarity</span>
+</div>
+<div class="bg-sand-50 p-2 rounded border border-slateCustom/15">
+<span class="font-condensed text-2xl text-slateCustom block">UX</span>
+<span class="text-[10px] uppercase text-slateCustom-deep/70">Research Flow</span>
+</div>
+</div>
+</div>
+<!-- Deliverable Tags -->
+<div class="pt-2">
+<span class="text-[10px] font-mono uppercase tracking-wider text-slateCustom/80 block mb-1.5">Technologies Used:</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="badge-pill bg-sand-50 border border-slateCustom/20 text-slateCustom-deep text-[10px]">Figma</span>
+<span class="badge-pill bg-sand-50 border border-slateCustom/20 text-slateCustom-deep text-[10px]">Research</span>
+<span class="badge-pill bg-sand-50 border border-slateCustom/20 text-slateCustom-deep text-[10px]">UI Layout</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card Action Footer -->
+<div class="p-4 bg-sand-50 border-t border-slateCustom/20 flex items-center justify-between">
+<a class="text-xs font-bold text-slateCustom hover:underline uppercase tracking-wider flex items-center gap-1" href="https://www.figma.com/design/g32Ct6HtfIsarIf8sqYjzm/Activity-4?node-id=0-1&t=xbLa61s5J6LdMFrD-1" rel="noopener noreferrer" target="_blank">
+                View Design →
+              </a>
+<span class="badge-pill bg-sand-200 text-slateCustom-deep">Figma</span>
+</div>
+</article>
+<!-- PROJECT 3: AgriLink Capstone System -->
+<article class="project-card vintage-card bg-sand-100 rounded-2xl overflow-hidden flex flex-col justify-between" data-category="uiux">
+<div>
+<!-- Visual Card Header -->
+<div class="p-4 bg-slateCustom text-sand-100 flex items-center justify-between border-b border-slateCustom-dark">
+<div>
+<span class="text-[10px] uppercase font-bold tracking-widest text-butter block">CAPSTONE 2 • FIGMA SYSTEM</span>
+<h3 class="font-condensed text-2xl uppercase tracking-wide">AgriLink</h3>
+</div>
+<span class="w-8 h-8 rounded-full border border-sand-100/40 flex items-center justify-center font-mono text-xs text-sand-100">03</span>
+</div>
+<!-- Mockup Graphic Area -->
+<div class="p-6 bg-sand-50 border-b border-slateCustom/15 flex flex-col items-center justify-center text-center">
+<div class="w-full h-44 rounded-lg bg-slateCustom/10 border border-slateCustom/20 flex items-center justify-center p-4 relative overflow-hidden">
+<div class="absolute top-2 left-2 flex space-x-1">
+<span class="w-2 h-2 rounded-full bg-rose-400"></span>
+<span class="w-2 h-2 rounded-full bg-amber-400"></span>
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+</div>
+<img alt="AgriLink farm monitoring and AI recommendation concept" class="mx-auto max-w-full max-h-full object-contain rounded-md" src="files/AgriLink.png">
+</div>
+</div>
+<!-- Details Body -->
+<div class="p-6 space-y-4">
+<div>
+<h4 class="text-xs uppercase font-bold tracking-wider text-slateCustom mb-1">Problem &amp; Goal:</h4>
+<p class="text-xs text-slateCustom-deep/80 leading-relaxed">
+                    AgriLink is a capstone research project that supports farm monitoring and AI-assisted recommendations for farmers. The system helps simplify crop insights, field conditions, and actionable guidance.
+                  </p>
+</div>
+<div>
+<h4 class="text-xs uppercase font-bold tracking-wider text-slateCustom mb-1">Key Outcome:</h4>
+<div class="grid grid-cols-2 gap-2 text-center pt-1">
+<div class="bg-sand-50 p-2 rounded border border-slateCustom/15">
+<span class="font-condensed text-2xl text-slateCustom block">AI</span>
+<span class="text-[10px] uppercase text-slateCustom-deep/70">Recommendation</span>
+</div>
+<div class="bg-sand-50 p-2 rounded border border-slateCustom/15">
+<span class="font-condensed text-2xl text-slateCustom block">Farm</span>
+<span class="text-[10px] uppercase text-slateCustom-deep/70">Monitoring</span>
+</div>
+</div>
+</div>
+<!-- Deliverable Tags -->
+<div class="pt-2">
+<span class="text-[10px] font-mono uppercase tracking-wider text-slateCustom/80 block mb-1.5">Technologies Used:</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="badge-pill bg-sand-50 border border-slateCustom/20 text-slateCustom-deep text-[10px]">Figma</span>
+<span class="badge-pill bg-sand-50 border border-slateCustom/20 text-slateCustom-deep text-[10px]">UX Research</span>
+<span class="badge-pill bg-sand-50 border border-slateCustom/20 text-slateCustom-deep text-[10px]">System Design</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card Action Footer -->
+<div class="p-4 bg-sand-50 border-t border-slateCustom/20 flex items-center justify-between">
+<a class="text-xs font-bold text-slateCustom hover:underline uppercase tracking-wider flex items-center gap-1" href="#contact">
+                View Concept →
+              </a>
+<span class="badge-pill bg-sand-200 text-slateCustom-deep">Capstone</span>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- END: ProjectsSection -->
+<!-- BEGIN: CreativeProcessSection -->
+
+<!-- END: CreativeProcessSection -->
+<!-- BEGIN: PerformanceAndMilestonesSection -->
+
+<!-- END: PerformanceAndMilestonesSection -->
+<!-- BEGIN: ContactSection -->
+<section class="py-16 md:py-24 bg-sand-100" id="contact">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="vintage-card bg-sand-50 rounded-3xl p-8 sm:p-12 shadow-md">
+<div class="text-center max-w-xl mx-auto mb-8">
+<span class="badge-pill bg-butter text-slateCustom-deep mb-3">GET IN TOUCH</span>
+<h2 class="font-condensed text-5xl sm:text-7xl uppercase text-slateCustom tracking-tight">
+              LET'S WORK TOGETHER
+            </h2>
+<p class="text-sm text-slateCustom-deep/80 mt-2">
+              Seeking summer 2025 internships, freelance front-end projects, or student hackathon collaborations. My inbox is always open!
+            </p>
+</div>
+<!-- Contact details cards -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+<a class="p-4 rounded-xl border border-slateCustom/20 bg-sand-100 flex flex-col items-center text-center hover:border-slateCustom transition-colors group" href="mailto:luisclarkc2004@gmail.com">
+<span class="w-10 h-10 rounded-full bg-slateCustom/10 text-slateCustom flex items-center justify-center mb-2 group-hover:bg-slateCustom group-hover:text-sand-100 transition-colors">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</span>
+<span class="text-xs uppercase font-bold tracking-wider text-slateCustom-deep">Email</span>
+<span class="text-xs text-slateCustom truncate max-w-full mt-0.5">luisclarkc2004@gmail.com</span>
+</a>
+<a class="p-4 rounded-xl border border-slateCustom/20 bg-sand-100 flex flex-col items-center text-center hover:border-slateCustom transition-colors group" href="https://www.linkedin.com/in/luis-clark-cadungog-18690b446/?isSelfProfile=true" rel="noopener noreferrer" target="_blank">
+<span class="w-10 h-10 rounded-full bg-slateCustom/10 text-slateCustom flex items-center justify-center mb-2 group-hover:bg-slateCustom group-hover:text-sand-100 transition-colors">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</span>
+<span class="text-xs uppercase font-bold tracking-wider text-slateCustom-deep">LinkedIn</span>
+<span class="text-xs text-slateCustom mt-0.5">/in/luis-clark-cadungog</span>
+</a>
+<a class="p-4 rounded-xl border border-slateCustom/20 bg-sand-100 flex flex-col items-center text-center hover:border-slateCustom transition-colors group" href="https://github.com/LuisClarkC" rel="noopener noreferrer" target="_blank">
+<span class="w-10 h-10 rounded-full bg-slateCustom/10 text-slateCustom flex items-center justify-center mb-2 group-hover:bg-slateCustom group-hover:text-sand-100 transition-colors">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"></path></svg>
+</span>
+<span class="text-xs uppercase font-bold tracking-wider text-slateCustom-deep">GitHub</span>
+<span class="text-xs text-slateCustom mt-0.5">@LuisClarkC</span>
+</a>
+</div>
+<!-- Bottom Action Buttons inside card -->
+<div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+<a class="w-full sm:w-auto px-8 py-3.5 bg-slateCustom hover:bg-slateCustom-dark text-sand-100 font-bold text-xs uppercase tracking-wider rounded-full text-center transition-colors shadow" href="mailto:luisclarkc2004@gmail.com?subject=Portfolio%20Inquiry%20-%20Internship">
+              Send An Email Directly
+            </a>
+<a class="w-full sm:w-auto px-8 py-3.5 border-2 border-slateCustom text-slateCustom-deep hover:bg-sand-200 font-bold text-xs uppercase tracking-wider rounded-full text-center transition-colors" href="files/LuisClark_Cadungog_Resume.pdf" target="_blank" rel="noopener noreferrer">
+              Download Official Resume (.PDF)
+            </a>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ContactSection -->
+</main>
+<!-- BEGIN: SiteFooter -->
+<footer class="bg-sand-50 border-t border-slateCustom/20 py-10 text-slateCustom-deep/70 text-xs">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-slateCustom text-sand-100 font-display flex items-center justify-center text-xs">R</span>
+<span class="font-bold uppercase tracking-wider text-slateCustom-deep">Luis Clark Cadungog • 2026</span>
+</div>
+<p class="text-center md:text-left">
+          Crafted with semantic HTML5, modern Tailwind CSS, and vanilla JavaScript. Optimized for fast GitHub Pages hosting.
+        </p>
+<a class="inline-flex items-center gap-1 font-bold uppercase tracking-wider text-slateCustom hover:text-slateCustom-dark" href="#home">
+          Back to Top ↑
+        </a>
+</div>
+</div>
+</footer>
+<!-- END: SiteFooter -->
+<!-- BEGIN: ClientInteractivityScript -->
+<script data-purpose="portfolio-interactions">
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // 1. Mobile Menu Drawer Toggle
+      const mobileToggleBtn = document.getElementById('mobile-menu-toggle');
+      const mobileNav = document.getElementById('mobile-menu');
+      const iconBars = document.getElementById('menu-icon-bars');
+      const iconClose = document.getElementById('menu-icon-close');
+
+      if (mobileToggleBtn && mobileNav) {
+        mobileToggleBtn.addEventListener('click', () => {
+          const isExpanded = mobileToggleBtn.getAttribute('aria-expanded') === 'true';
+          mobileToggleBtn.setAttribute('aria-expanded', !isExpanded);
+          mobileNav.classList.toggle('hidden');
+          iconBars.classList.toggle('hidden');
+          iconClose.classList.toggle('hidden');
+        });
+
+        // Close mobile drawer when clicking any link
+        const mobileLinks = mobileNav.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileNav.classList.add('hidden');
+            iconBars.classList.remove('hidden');
+            iconClose.classList.add('hidden');
+            mobileToggleBtn.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
+      // 2. Project Category Filter Tabs
+      const filterButtons = document.querySelectorAll('.project-filter-btn');
+      const projectCards = document.querySelectorAll('.project-card');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const filterValue = button.getAttribute('data-filter');
+
+          // Update active button state
+          filterButtons.forEach(btn => {
+            btn.classList.remove('bg-slateCustom', 'text-sand-100');
+            btn.classList.add('bg-sand-200', 'text-slateCustom-deep');
+          });
+          button.classList.add('bg-slateCustom', 'text-sand-100');
+          button.classList.remove('bg-sand-200', 'text-slateCustom-deep');
+
+          // Filter card visibility with subtle animation
+          projectCards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+            if (filterValue === 'all' || cardCategory === filterValue) {
+              card.style.display = 'flex';
+              card.style.opacity = '1';
+            } else {
+              card.style.display = 'none';
+              card.style.opacity = '0';
+            }
+          });
+        });
+      });
+
+    });
+  </script>
+<!-- END: ClientInteractivityScript -->
+
+
+</body></html>
